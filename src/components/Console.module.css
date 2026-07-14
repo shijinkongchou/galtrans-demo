@@ -1,0 +1,163 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  border-top: 1px solid #333;
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+
+.collapsed {
+  height: 32px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  padding: 0 12px;
+  background: #252526;
+  border-bottom: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #cccccc;
+}
+
+.titleIcon {
+  font-size: 10px;
+  color: #888;
+}
+
+.logCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 16px;
+  padding: 0 6px;
+  background: #3c3c3c;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #aaaaaa;
+}
+
+.toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbarButton {
+  padding: 2px 8px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #cccccc;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toolbarButton:hover {
+  background: #3c3c3c;
+  border-color: #555;
+  color: #ffffff;
+}
+
+.logContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.logContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.logContainer::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.logContainer::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 5px;
+}
+
+.logContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.logEntry {
+  display: flex;
+  align-items: flex-start;
+  padding: 2px 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.logEntry:hover {
+  background: #252526;
+}
+
+.timestamp {
+  color: #666;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.level {
+  flex-shrink: 0;
+  margin-right: 8px;
+  font-weight: 600;
+  min-width: 50px;
+}
+
+.infoLevel {
+  color: #569cd6;
+}
+
+.warnLevel {
+  color: #dcdcaa;
+}
+
+.errorLevel {
+  color: #f44747;
+}
+
+.message {
+  flex: 1;
+  min-width: 0;
+}
+
+.info .message {
+  color: #d4d4d4;
+}
+
+.warn .message {
+  color: #dcdcaa;
+}
+
+.error .message {
+  color: #f44747;
+}
+
+.emptyLogs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #555;
+  font-size: 12px;
+}

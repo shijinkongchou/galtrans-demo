@@ -1,0 +1,30 @@
+# 依赖
+node_modules/
+
+# 构建输出
+dist/
+
+# 开发环境
+*.local
+.env
+.env.*
+!.env.example
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 调试
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo

@@ -1,0 +1,233 @@
+.container {
+  width: 300px;
+  height: 100%;
+  background: #252526;
+  border-left: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  padding: 14px 16px;
+  border-bottom: 1px solid #333;
+  background: #2d2d30;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.stages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stageItem {
+  position: relative;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.stageHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.statusIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.iconInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.idle {
+  background: #3c3c3c;
+  color: #888;
+  border: 1px solid #555;
+}
+
+.running {
+  background: #094771;
+  color: #4ec9ff;
+  border: 1px solid #0078d4;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.done {
+  background: #0d5c3f;
+  color: #4ade80;
+  border: 1px solid #22c55e;
+}
+
+.error {
+  background: #5c1a1a;
+  color: #f87171;
+  border: 1px solid #ef4444;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 120, 212, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(0, 120, 212, 0.1);
+  }
+}
+
+.stageInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.stageName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin-bottom: 3px;
+}
+
+.stageIcon {
+  font-size: 14px;
+}
+
+.stageStatus {
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.idleText {
+  color: #888;
+}
+
+.runningText {
+  color: #4ec9ff;
+}
+
+.doneText {
+  color: #4ade80;
+}
+
+.errorText {
+  color: #f87171;
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 6px;
+  background: #3c3c3c;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBar.idle {
+  background: #555;
+}
+
+.progressBar.running {
+  background: linear-gradient(90deg, #0078d4, #4ec9ff, #0078d4);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+.progressBar.done {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+.progressBar.error {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.progressStripes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 6px,
+    rgba(255, 255, 255, 0.1) 6px,
+    rgba(255, 255, 255, 0.1) 12px
+  );
+  animation: stripes 1s linear infinite;
+}
+
+@keyframes stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 17px 0;
+  }
+}
+
+.progressText {
+  font-size: 11px;
+  color: #888;
+  text-align: right;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.connector {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 10px;
+  background: #3c3c3c;
+}
+
+.connectorDone {
+  background: #22c55e;
+}

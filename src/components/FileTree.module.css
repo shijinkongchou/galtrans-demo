@@ -1,0 +1,119 @@
+.fileTree {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #12121f;
+  border-right: 1px solid #2a2a4a;
+  overflow: hidden;
+}
+
+.header {
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #c8c8e0;
+  border-bottom: 1px solid #2a2a4a;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16162a 100%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.treeContainer {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.treeContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.treeContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.treeContainer::-webkit-scrollbar-thumb {
+  background: #3a3a5a;
+  border-radius: 3px;
+}
+
+.treeContainer::-webkit-scrollbar-thumb:hover {
+  background: #4a4a6a;
+}
+
+.nodeContainer {
+  width: 100%;
+}
+
+.node {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  user-select: none;
+  height: 28px;
+  box-sizing: border-box;
+}
+
+.node:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.selected {
+  background: rgba(102, 126, 234, 0.2) !important;
+  border-left: 2px solid #667eea;
+}
+
+.directory {
+  font-weight: 500;
+}
+
+.file {
+  color: #a0a0b8;
+}
+
+.arrow {
+  width: 14px;
+  font-size: 10px;
+  color: #666688;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowPlaceholder {
+  width: 14px;
+  flex-shrink: 0;
+}
+
+.icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  color: inherit;
+}
+
+.children {
+  width: 100%;
+}
+
+.empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: #666688;
+  font-size: 13px;
+}
